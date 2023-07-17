@@ -1,1 +1,2 @@
-# Redux-hands-on
+# react-redux
+react-redux
