@@ -1,17 +1,10 @@
-// src/store/index.js
+import { combineReducers, createStore } from "redux";
+import { counterReducer } from "./counter";
 
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import counterReducer from "./counter";
-import { logger, thunk } from "./middleware";
-import todoReducer from "./todo";
-
-// make root reducer from slice reducers
+// root Reducer
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  todo: todoReducer,
+  counterReducer,
 });
 
-// make store from reducers
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
-
-export default store;
+// store
+export const store = createStore(rootReducer);
